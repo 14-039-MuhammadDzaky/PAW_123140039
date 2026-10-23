@@ -1,0 +1,174 @@
+/* ------------------------------------------------------------ */
+/* Global Styles – Inter Font, Box Sizing and Base Colors */
+/* ------------------------------------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: rgba(0, 128, 0, 0.25); /* green page background with 25% opacity */
+  color: hsl(220, 15%, 20%);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* ------------------------------------------------------------ */
+/* Container – Flexbox Centering, Max‑Width and Card Effect */
+/* ------------------------------------------------------------ */
+.container {
+  background: rgba(255, 255, 255, 0.85); /* white card with slight opacity */
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  max-width: 720px;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: hsl(240, 30%, 30%);
+}
+
+/* ------------------------------------------------------------ */
+/* Form Styling – Class Selectors + Pseudo‑classes */
+/* ------------------------------------------------------------ */
+.register-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.form-group input {
+  padding: 0.6rem 0.8rem;
+  border: 2px solid hsl(210, 20%, 80%);
+  border-radius: 6px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: hsl(240, 40%, 55%);
+  box-shadow: 0 0 0 3px hsla(240, 40%, 55%, 0.2);
+}
+
+.gender-group {
+  border: 2px solid hsl(210, 20%, 80%);
+  border-radius: 6px;
+  padding: 0.8rem;
+}
+
+.gender-group legend {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.gender-group label {
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.submit-btn {
+  background: hsl(240, 45%, 55%);
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+  align-self: start;
+}
+
+.submit-btn:hover {
+  background: hsl(120, 45%, 40%); /* greener hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,128,0,0.3);
+}
+
+/* ------------------------------------------------------------ */
+/* Table Styling – Element & Class Selectors */
+/* ------------------------------------------------------------ */
+.detail-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.detail-table th,
+.detail-table td {
+  border: 1px solid hsl(210, 20%, 80%);
+  padding: 0.8rem;
+  text-align: left;
+}
+
+.detail-table th {
+  background: hsl(240, 30%, 85%);
+  font-weight: 600;
+}
+
+.detail-table tr:hover {
+  background: hsl(240, 30%, 92%);
+}
+
+.info {
+  font-size: 0.95rem;
+  color: hsl(220, 15%, 35%);
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: hsl(240, 45%, 55%);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* ------------------------------------------------------------ */
+/* Responsive Adjustments – Media Query */
+/* ------------------------------------------------------------ */
+@media (min-width: 600px) {
+  .register-form {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .form-group {
+    grid-column: span 2;
+  }
+  .gender-group {
+    grid-column: span 2;
+  }
+  .submit-btn {
+    grid-column: span 2;
+    justify-self: end;
+  }
+}
